@@ -5,6 +5,24 @@
  * an enhanced for loop. If no names are provided, it should display "Hello, World!".
  *
  * Usage: java HelloApp [name1] [name2] ... [nameN]
+=======
+/** feature/UC4-display-multiple-names
+ * HelloApp – UC4 – A simple Java application that greets multiple users by name if
+ * provided as command-line arguments, or defaults to greeting "World" if no names are given.
+ *
+ * Greet Multiple Users – The application should accept multiple names as command-line
+ * arguments and display a personalized greeting for each user.
+ * HelloApp.java – A simple Java application that greets the user by name if
+ * provided as a command-line argument, or defaults to greeting "World" if no name is
+ * given. This use case demonstrates how to handle optional command-line arguments and
+ * provide default values in Java
+/** feature/UC1-DisplayHelloWorld
+ * HelloApp.java - A simple Java application that Displays "Hello, World!" to
+ * the console
+ * UC 1: Display "Hello World" – The application should display the message
+ * "Hello World" to the console when executed.
+ * Usage: java HelloAppUC4 [Name1] [Name2] ... [NameN]
+ main
  * - If names are provided, it will display "Hello, [Name1], [Name2], ..."
  * - If no names are provided, it will display "Hello, World!"
  *
@@ -62,4 +80,3 @@ public class HelloApp {
 
         System.out.println("Hello, " + name + "!");
     }
-}
