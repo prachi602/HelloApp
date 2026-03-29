@@ -1,14 +1,15 @@
 /**
- * HelloApp – UC6 – Display "Hello" with Multiple Command-Line Arguments using
- * substring to Remove Trailing Delimiter
+ * HelloApp - UC7 - A simple Java application that greets multiple users by name
+ * if provided as command-line arguments using the String.join() method, or defaults
+ * to greeting "World" if no names are provided.
  *
- * UC 6: Display "Hello" with Multiple Command-Line Arguments using substring to
- * remove trailing delimiter. The application should accept multiple names as
- * command-line arguments and display a personalized greeting for each user using
- * substring to remove the trailing delimiter.
+ * UC 7: Display "Hello" with Multiple Command-Line Arguments using String.join() Method
+ * or Default Message - The application should accept multiple names as command-line
+ * arguments and display a personalized greeting for each user using the String.join()
+ * method. If no names are provided, it should display "Hello, World!".
  *
- * Usage: java HelloApp [name1] [name2] ... [nameN]
-=======
+ * Usage: java HelloApp [name1] [name2] ... [name feature/UC7-String-join
+ * - If names are provided, it will display "Hello, [name1], [name2], ..." to the console
 /** feature/UC4-display-multiple-names
  * HelloApp – UC4 – A simple Java application that greets multiple users by name if
  * provided as command-line arguments, or defaults to greeting "World" if no names are given.
@@ -27,6 +28,7 @@
  * Usage: java HelloAppUC4 [Name1] [Name2] ... [NameN]
  main
  * - If names are provided, it will display "Hello, [Name1], [Name2], ..."
+ main
  * - If no names are provided, it will display "Hello, World!"
  *
  * @author Prachi Sharma
@@ -34,49 +36,25 @@
  * @since UC1
  */
 
-/**
- * Key Concepts for HelloApp UC6:
- * 1. Enhanced For Loop: A simplified syntax for iterating over arrays or collections
- *    without needing an index variable.
- * 2. StringBuilder: A mutable sequence of characters used for efficient string
- *    concatenation.
- * 3. String Manipulation: Using methods like substring() to modify strings after
- *    construction.
- * 4. Trailing Character Removal: Techniques to remove unwanted characters (like a
- *    comma and space) from the end of a string after building it.
- * 5. String Length: Understanding how to use the length() method to determine
- *    the size of a string and manipulate it accordingly.
- */
-
-/* Sample Code for HelloApp UC6:
-StringBuilder nameBuilder = new StringBuilder();
-for (String name : args) {
-    nameBuilder.append(name).append(", ");
-}
-
-if (nameBuilder.length() > 0) {
-    name = nameBuilder.substring(0, nameBuilder.length() - 2); // Remove last ", "
-}
-*/
-
 public class HelloApp {
 
     public static void main(String[] args) {
 
-        String name = "World";
+        // Step 1: Declare a variable to store names
+        // Default value is "World"
+        String names = "World";
 
+        // Step 2: Check if command-line arguments are provided
+        // args.length gives number of arguments passed
         if (args.length > 0) {
 
-            StringBuilder nameBuilder = new StringBuilder();
-
-            for (String n : args) {
-                nameBuilder.append(n).append(", ");
-            }
-
-            if (nameBuilder.length() > 0) {
-                name = nameBuilder.substring(0, nameBuilder.length() - 2);
-            }
+            // Step 3: Join all arguments into a single string
+            // String.join() combines all elements with a delimiter ", "
+            names = String.join(", ", args);
         }
 
-        System.out.println("Hello, " + name + "!");
+        // Step 4: Display the greeting message
+        // If args exist → Hello, name1, name2!
+        // If no args → Hello, World!
+        System.out.println("Hello, " + names + "!");
     }
